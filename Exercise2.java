@@ -1,15 +1,19 @@
-package com.cg.lab3;
-
+package com.cg.Lab9;
+interface StringOperation{
+	String modifyString(String str);
+}
 public class Exercise2 {
 
 	public static void main(String[] args) {
-		System.out.println(getImage ("EARTH"));
+		// TODO Auto-generated method stub
+		StringOperation s=(str)->{
+			String temp="";
+			for(int i=0;i<str.length();i++)
+				temp+=str.charAt(i)+" ";
+			return temp;
+		};
+		System.out.println(s.modifyString("Sahithi"));
 
-	}
-
-	private static String getImage(String string) {
-		StringBuffer str=new StringBuffer(string);
-		return str+"|"+str.reverse();
 	}
 
 }

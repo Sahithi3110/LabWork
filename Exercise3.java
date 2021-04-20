@@ -1,26 +1,21 @@
-package com.cg.lab3;
+package com.cg.Lab9;
 
+import java.util.regex.Pattern;
+
+interface Authintication{
+	boolean authinticate(String uname,String password);
+}
 public class Exercise3 {
 
 	public static void main(String[] args) {
-		System.out.println(alterString("sahithi"));
-		
+		Authintication a=(uname,password)->{
+			if(Pattern.matches("[a-zA-Z0-9]+",uname) && Pattern.matches("[a-zA-Z0-9]{8,}",password))
+				return true;
+			else return false;
+				
+		};
+		System.out.println(a.authinticate("Sahithireddy","abccd746"));
 
-	}
-
-	private static String alterString(String string) {
-	
-		char[] ch=string.toCharArray();
-		for(int i=0;i<string.length();i++)
-		{
-			if(string.charAt(i)!='a' && string.charAt(i)!='e' &&string.charAt(i)!='i' &&string.charAt(i)!='o' &&
-					string.charAt(i)!='u')
-			{	
-				ch[i]=(char)((int)(string.charAt(i)+1));
-			}
-			 
-		}String str=new String(ch);
-		return str;
 	}
 
 }

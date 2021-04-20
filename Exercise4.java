@@ -1,19 +1,27 @@
-package com.cg.lab3;
-
+package com.cg.Lab9;
+interface StudentInterface{
+	void display(String str);
+	//String display();
+}
 public class Exercise4 {
-
-	public static void main(String[] args) {
-		System.out.println(modifyNumber (45862));
-
+	 private String name;
+	public String getName() {
+		return name;
 	}
-	private static int modifyNumber(int n) {
-		String str=Integer.toString(n);
-		String s="";
-		for(int i=0,j=i+1;i<str.length() & j<str.length();i++,j++)
-			s=s+(int)Math.abs((int)str.charAt(i)-(int)str.charAt(j));
-		s=s+str.charAt(str.length()-1);
-		return Integer.parseInt(s);
+	public void setName(String name) {
+		this.name = name;
+		System.out.println(name);
+	}
+	
+	public static void main(String[] args) {
+		Exercise4 e=new Exercise4();
+		StudentInterface str= e::setName;
+		str.display("Sahithi");
+//		StudentInterface str= e::getName;
+//		System.out.println(str.display());
+
 		
+
 	}
 
 }

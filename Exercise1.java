@@ -1,22 +1,15 @@
-package com.cg.exceptions;
-
+package com.cg.Lab9;
+interface InterfaceOne{
+	void method1(int x,int y);
+}
 public class Exercise1 {
 
 	public static void main(String[] args) {
-		
-			method(12);
-	}
-
-	public static void method(int i) {
-		try {
-	    if(i>15)
-	    	System.out.println("Correct age");
-	    else throw new Exception("Wrong age");
-		}catch(Exception e)
-		{
-			System.out.println(e);
-		}
-		
+		InterfaceOne i=(x,y)->{
+			System.out.println((int)Math.pow(x,y));
+		};
+		i.method1(4, 2);
+       
 	}
 
 }
